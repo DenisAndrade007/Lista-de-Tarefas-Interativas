@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas Interativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Minha Lista de Tarefas</h1>
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Adicione uma nova tarefa" required>
+            <input type="date" id="task-date" required>
+            <input type="time" id="task-time" required>
+            <button type="submit">Adicionar</button>
+        </form>
+        <ul id="task-list"></ul>
+        <div class="filters">
+            <button id="filter-all">Todas</button>
+            <button id="filter-active">Ativas</button>
+            <button id="filter-completed">Concluídas</button>
+        </div>
+        <button id="sort-by-date">Ordenar por Data</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

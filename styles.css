@@ -1,0 +1,256 @@
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+#task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#task-input {
+    flex: 1 1 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 300;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#task-date, #task-time {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 300;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#task-input:focus, #task-date:focus, #task-time:focus {
+    border-color: #4CAF50;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    min-width: 100px;
+}
+
+#task-form button {
+    flex: 1;
+    padding: 12px 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+#task-list {
+    list-style-type: none;
+}
+
+#task-list li {
+    background-color: rgba(249, 249, 249, 0.8);
+    border: 1px solid #ddd;
+    margin-bottom: 10px; 
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: background-color 0.3s;
+}
+
+#task-list li:hover {
+    background-color: rgba(240, 240, 240, 0.9);
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.task-info span {
+    margin-bottom: 5px;
+}
+
+.task-info small {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+#task-list li.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.task-buttons button {
+    padding: 6px;
+    font-size: 0.75rem;
+    min-width: 45px;
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.complete-btn {
+    background-color: #4CAF50;
+}
+
+.delete-btn {
+    background-color: #f44336;
+}
+
+.delete-btn i {
+    font-size: 1rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.filters button {
+    background-color: #008CBA;
+    flex: 1;
+}
+
+.filters button:hover {
+    background-color: #007B9A;
+}
+
+#sort-by-date {
+    background-color: #9c27b0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#sort-by-date:hover {
+    background-color: #7b1fa2;
+}
+
+@media (max-width: 600px) {
+    body {
+        animation: none;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #task-form {
+        flex-direction: column;
+    }
+
+    #task-input, #task-date, #task-time, #task-form button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .task-buttons button {
+        min-width: 40px;
+        width: 40px;
+        height: 32px;
+        padding: 4px;
+        font-size: 0.7rem;
+    }
+
+    .delete-btn i {
+        font-size: 0.9rem;
+    }
+
+    .filters button {
+        min-width: 70px;
+        padding: 8px 12px;
+    }
+}
